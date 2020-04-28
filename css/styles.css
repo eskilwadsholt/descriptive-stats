@@ -75,6 +75,33 @@ body {
     justify-content: space-between;
     align-items: center;
 }
+#create-stats-button {
+    border: none;
+    background: #404040;
+    color: #fff;
+    font-weight: 100;
+    padding: 20px;
+    text-transform: uppercase;
+    border-radius: 6px;
+    display: inline-block;
+    transition: all 0.3s ease 0s;
+}
+#create-stats-button:hover {
+    color: #404040;
+    font-weight: 700;
+    letter-spacing: 2px;
+    background: white;
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    transition: 0.1s ease-in;
+}
+#create-stats-button:active {
+    background: #ddd;
+    transform: translate(1px, 2px);
+    -webkit-box-shadow: 0px 5px 40px -10px white;
+    -moz-box-shadow: 0px 5px 40px -10px white;
+    transition: none;
+}
 #table {
     grid-area: table;
     padding: 10px;
@@ -90,6 +117,11 @@ body {
 #cum-curve {
     grid-area: cum-curve;
     background: rgba(255, 166, 0, 0.322);
+}
+.cumcurve-line {
+    fill: none;
+    stroke: darkblue;
+    stroke-width: 1px;
 }
 .bar {
     fill: red;

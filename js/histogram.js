@@ -22,7 +22,7 @@ function drawHistogram(stats) {
         .attr("class", "interval-text");
 
     svg
-        .selectAll("columns")
+        .selectAll("histogram")
         .data(stats.rows)
         .enter()
         .append("rect")

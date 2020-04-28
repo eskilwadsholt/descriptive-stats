@@ -4,6 +4,7 @@ function createStats() {
     var stats = computeStats();
     createStatsTable(stats);
     drawHistogram(stats);
+    drawCumCurve(stats);
 }
 
 function computeStats() {
