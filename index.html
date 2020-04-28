@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Histogram with D3js v1.0</title>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+        <link href="./css/styles.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div id="body-grid">
+            <div id="paste-img">
+                <div id="img-placeholder">
+                    COPY PASTE images here ...
+                </div>
+                <div id="img-tooltip">
+                    Click to select this frame and press Ctrl+V to insert screenshot from clipboard. Backspace or delete to remove again.
+                </div>
+            </div>
+            <div id="inputs">
+                <div id="text-fields">
+                    <label>Interval endpoints:</label>
+                    <input type="text" id="x-vals">
+                    <br>
+                    <label>Frequencies:</label>
+                    <input type="text" id="freq-vals">
+                </div>
+                <div id="buttons">
+                    <button type="button" id="create-stats-button">
+                        Create stats<br>from data ...
+                    </button>
+                </div>
+            </div>
+            <div id="table"></div>
+            <div id="histogram"></div>
+            <div id="cum-curve"></div>
+        </div>
+    </body>
+    <script src="./js/pasteimg.js"></script>
+    <script src="./js/readdata.js"></script>
+    <script src="./js/histogram.js"></script>
+    <script src="./js/stattable.js"></script>
+    <script src="./js/statsbtn.js"></script>
+</html>

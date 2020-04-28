@@ -1,0 +1,155 @@
+html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: gray;
+}
+#body-grid {
+    display: grid;
+    width: 90%;
+    height: 90%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+        'paste-img inputs table table'
+        'histogram histogram cum-curve cum-curve';
+}
+#paste-img {
+    position: relative;
+    box-sizing: border-box;
+    grid-area: paste-img;
+    margin: 0;
+    background: rgba(141, 0, 0, 0.24);
+    background-size: contain;
+}
+#img-placeholder {
+    box-sizing: border-box;
+    position: absolute;
+    padding: 10px;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    font-size: 20pt;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.308);
+}
+#img-placeholder.hide {
+    visibility: hidden;
+}
+#img-tooltip {
+    position: absolute;
+    box-sizing: border-box;
+    top: 10px;
+    left: 50%;
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid black;
+    width: 90%;
+    background: rgba(255, 255, 255, 0);
+    transform: translate(-50%) scale(0);
+    transition: 200ms ease-in-out;
+}
+#img-tooltip::after {
+    content: '';
+    background-color: ;
+}
+#img-tooltip.show {
+    transform: translate(-50%) scale(1);
+    background: white;
+    transition: 200ms ease-in-out;
+}
+#paste-img.selected {
+    border: 2px solid black;
+}
+#inputs {
+    grid-area: inputs;
+    padding: 20px;
+    background: rgba(0, 0, 255, 0.158);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+#table {
+    grid-area: table;
+    padding: 10px;
+    background: rgba(0, 128, 0, 0.274);
+    display: flex;
+    justify-content: center;
+}
+#histogram {
+    grid-area: histogram;
+    position: relative;
+    background: lightgray;
+}
+#cum-curve {
+    grid-area: cum-curve;
+    background: rgba(255, 166, 0, 0.322);
+}
+.bar {
+    fill: red;
+    stroke: black;
+    stroke-width: 1px;
+}
+.bar:hover {
+    stroke-width: 3px;
+}
+.bar-reference {
+    fill: rgba(0, 0, 255, 0.459);
+    stroke: black;
+    stroke-width: 1px;
+}
+
+.freq-text, .interval-text {
+    font-size: 10pt;
+    box-sizing: border-box;
+    position: absolute;
+    padding: 3px;
+    border-radius: 10px;
+    margin-bottom: 6px;
+    background: rgba(0, 0, 0, 0.1);
+    visibility: hidden;
+}
+
+
+table {
+    border-collapse: collapse;
+    border-spacing: 1px;
+}
+
+.tableStyles * {
+    font-size: 11pt;
+    font-family: Arial;
+    padding: 5px 10px;
+}
+
+.tableStyles {
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    text-align: right;
+}
+
+.tableStyles th {
+    background: #366;
+    color: white;
+    font-weight: bold;
+}
+
+.tableStyles tr {
+    background-color: #ddd;
+}
+
+.tableStyles tr:nth-of-type(even) {
+    background-color: #aaa;
+  }
+
+.tableStyles tr:hover {
+    background: #666;
+    cursor: pointer;
+}
