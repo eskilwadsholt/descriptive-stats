@@ -75,6 +75,10 @@ body {
     justify-content: space-between;
     align-items: center;
 }
+textarea {
+    height: 50%;
+    width: 100%;
+}
 #create-stats-button {
     border: none;
     background: #404040;
@@ -105,23 +109,36 @@ body {
 #table {
     grid-area: table;
     padding: 10px;
+    padding-top: 30px;
     background: rgba(0, 128, 0, 0.274);
     display: flex;
     justify-content: center;
 }
 #histogram {
-    grid-area: histogram;
     position: relative;
+    overflow: hidden;
+    grid-area: histogram;
     background: lightgray;
+
 }
 #cum-curve {
+    position: relative;
+    overflow: hidden;
     grid-area: cum-curve;
     background: rgba(255, 166, 0, 0.322);
 }
 .cumcurve-line {
     fill: none;
-    stroke: darkblue;
-    stroke-width: 1px;
+    stroke: blue;
+    stroke-width: 1.5px;
+}
+.cumcurve-background, .cumcurve-quartile {
+    fill: white;
+    stroke: black;
+    stroke-width: 0.5px;
+}
+.cumcurve-quartile {
+    fill: rgba(0, 0, 0, 0.1);
 }
 .bar {
     fill: red;

@@ -34,6 +34,7 @@ function computeStats() {
     var stats = {
         rows: rows,
         totalCount: totalCount,
+        bins: n,
         xMin: xVals[0],
         xMax: xVals[n],
         hMax: hMax,

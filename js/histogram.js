@@ -60,7 +60,7 @@ function drawHistogram(stats) {
 
     // Add x-axis
     var xAxis = d3.axisBottom(xScale)
-        .ticks(freqs.length);
+        .ticks(stats.bins);
 
     svg
         .append("g")
