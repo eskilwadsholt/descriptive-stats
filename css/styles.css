@@ -29,6 +29,7 @@ body {
     margin: 0;
     background: rgba(141, 0, 0, 0.24);
     background-size: contain;
+    background-repeat: no-repeat;
 }
 #img-placeholder {
     box-sizing: border-box;
