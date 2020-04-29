@@ -1,7 +1,12 @@
 function drawCumCurve(stats) {
     var divElement = document.getElementById("cum-curve");
     divElement.innerHTML = "";
-    var margin = 40;
+    var margin = {
+        top: 20,
+        right: 20,
+        bottom: 40,
+        left: 50
+    };
     var width = divElement.clientWidth;
     var height = divElement.clientHeight;
 
@@ -10,8 +15,8 @@ function drawCumCurve(stats) {
         .attr("width", width)
         .attr("height", height);
 
-    var xScale = d3.scaleLinear().domain([stats.xMin, stats.xMax]).range([margin, width - margin]);
-    var yScale = d3.scaleLinear().domain([0, 100]).range([height - margin, margin]);
+    var xScale = d3.scaleLinear().domain([stats.xMin, stats.xMax]).range([margin.left, width - margin.right]);
+    var yScale = d3.scaleLinear().domain([0, 100]).range([height - margin.bottom, margin.top]);
 
     var line = d3.line()
         .x(function(d) { return xScale(d.x); })
@@ -32,25 +37,25 @@ function drawCumCurve(stats) {
 
     svg.append("rect")
         .attr("class", "cumcurve-background")
-        .attr("x", margin)
-        .attr("y", margin)
-        .attr("width", width - 2 * margin)
-        .attr("height", height - 2 * margin);
+        .attr("x", margin.left)
+        .attr("y", margin.top)
+        .attr("width", width - margin.left - margin.right)
+        .attr("height", height - margin.top - margin.bottom);
 
-    var quartile = (height - 2 * margin) / 4
+    var quartile = (height - margin.top - margin.bottom) / 4
 
     svg.append("rect")
         .attr("class", "cumcurve-quartile")
-        .attr("x", margin)
-        .attr("y", margin + quartile)
-        .attr("width", width - 2 * margin)
+        .attr("x", margin.left)
+        .attr("y", margin.top + quartile)
+        .attr("width", width - margin.left - margin.right)
         .attr("height", quartile);
 
     svg.append("rect")
         .attr("class", "cumcurve-quartile")
-        .attr("x", margin)
-        .attr("y", margin + 3 * quartile)
-        .attr("width", width - 2 * margin)
+        .attr("x", margin.left)
+        .attr("y", margin.top + 3 * quartile)
+        .attr("width", width - margin.left - margin.right)
         .attr("height", quartile);
 
     // Add x-axis
@@ -60,7 +65,7 @@ function drawCumCurve(stats) {
     svg
         .append("g")
         .attr("class", "x-axis")
-        .attr("transform", `translate(0, ${height - margin})`)
+        .attr("transform", `translate(0, ${height - margin.bottom})`)
         .call(xAxis);
 
         // Add x-axis
@@ -71,7 +76,7 @@ function drawCumCurve(stats) {
     svg
         .append("g")
         .attr("class", "y-axis")
-        .attr("transform", `translate(${margin}, 0)`)
+        .attr("transform", `translate(${margin.left}, 0)`)
         .call(yAxis);
 
     // Path goes last to be on top
