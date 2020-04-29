@@ -1,3 +1,6 @@
+* {
+    font-size: 9pt;
+}
 html, body {
     margin: 0;
     width: 100%;
@@ -34,7 +37,7 @@ body {
     top: 50%;
     left: 50%;
     width: 100%;
-    font-size: 20pt;
+    font-size: 15pt;
     transform: translate(-50%, -50%);
     background: rgba(255, 255, 255, 0.308);
 }
@@ -155,7 +158,6 @@ textarea {
 }
 
 .freq-text, .interval-text {
-    font-size: 10pt;
     box-sizing: border-box;
     position: absolute;
     padding: 3px;
@@ -172,7 +174,6 @@ table {
 }
 
 .tableStyles * {
-    font-size: 11pt;
     font-family: Arial;
     padding: 5px 10px;
 }
