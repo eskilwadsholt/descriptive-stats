@@ -176,6 +176,7 @@ table {
 }
 
 .tableStyles * {
+    font-size: 9pt;
     font-family: Arial;
     padding: 5px 10px;
 }
